@@ -1,0 +1,18 @@
+CREATE TABLE rules (
+id INT PRIMARY KEY,
+rule_string VARCHAR(255),
+ast JSON
+);
+
+CREATE TABLE attributes (
+id INT PRIMARY KEY,
+name VARCHAR(50),
+data_type VARCHAR(20)
+);
+
+CREATE TABLE rule_attributes (
+rule_id INT,
+attribute_id INT,
+FOREIGN KEY (rule_id) REFERENCES rules(id),
+FOREIGN KEY (attribute_id) REFERENCES attributes(id)
+);

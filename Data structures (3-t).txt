@@ -1,0 +1,6 @@
+class Node:
+def __init__(self, type, value=None, left=None, right=None):
+self.type = type # "operator" or "operand"
+self.value = value # optional value for operand nodes
+self.left = left # reference to another Node (left child)
+self.right = right # reference to another Node (right child for operators)
